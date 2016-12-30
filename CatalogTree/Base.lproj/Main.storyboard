@@ -1,1 +1,110 @@
-
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="EhN-Qj-wNO">
+    <dependencies>
+        <deployment version="2336" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Загрузка-->
+        <scene sceneID="38a-7S-Car">
+            <objects>
+                <viewController title="Загрузка" modalTransitionStyle="crossDissolve" id="CF0-tD-VfP" customClass="DatabaseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yxn-9a-vTr"/>
+                        <viewControllerLayoutGuide type="bottom" id="ylg-ZI-Akt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mxo-Sh-yw1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0q-HH-Und">
+                                <rect key="frame" x="72" y="72" width="176" height="31"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="16"/>
+                                <state key="normal" title="Обновить">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshTree:" destination="CF0-tD-VfP" eventType="touchUpInside" id="I40-2H-qY9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y0q-HH-Und" firstAttribute="top" secondItem="yxn-9a-vTr" secondAttribute="bottom" constant="8" symbolic="YES" id="4bJ-x5-RwD"/>
+                            <constraint firstItem="Y0q-HH-Und" firstAttribute="centerX" secondItem="Mxo-Sh-yw1" secondAttribute="centerX" id="4xc-KH-G6g"/>
+                            <constraint firstItem="Y0q-HH-Und" firstAttribute="centerX" secondItem="Mxo-Sh-yw1" secondAttribute="centerX" id="VDo-u5-aYX"/>
+                            <constraint firstItem="Y0q-HH-Und" firstAttribute="leading" secondItem="Mxo-Sh-yw1" secondAttribute="leadingMargin" constant="56" id="wEr-BC-uA3"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Загрузка каталога" id="LF2-VN-Ndk">
+                        <barButtonItem key="backBarButtonItem" title="Каталог" id="TVa-qw-C8G"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rAy-1v-12X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="324" y="250"/>
+        </scene>
+        <!--Каталог товаров и услуг-->
+        <scene sceneID="Xkk-Zk-tiC">
+            <objects>
+                <viewController title="Каталог товаров и услуг" id="xtY-hk-3Xb" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YOI-Cu-mFq"/>
+                        <viewControllerLayoutGuide type="bottom" id="bG0-G8-DKq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6sf-HL-DJB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rko-BL-j0S">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </view>
+                        </subviews>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Каталог товаров и услуг" id="VNh-Ec-paB">
+                        <barButtonItem key="backBarButtonItem" title="Каталог" id="Hjf-Mb-m3b"/>
+                        <barButtonItem key="leftBarButtonItem" title="Обновить" id="eWS-lg-Yd0">
+                            <connections>
+                                <segue destination="CF0-tD-VfP" kind="push" id="GE1-Ka-wke"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="trview" destination="rko-BL-j0S" id="MId-Jl-qAd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rvf-l2-rDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-118" y="250"/>
+        </scene>
+        <!--Каталог-->
+        <scene sceneID="RB1-f1-jE3">
+            <objects>
+                <navigationController title="Каталог" automaticallyAdjustsScrollViewInsets="NO" id="EhN-Qj-wNO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AJu-9H-eR6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.80000000000000004" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xtY-hk-3Xb" kind="relationship" relationship="rootViewController" id="YhM-bt-HRW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s56-9F-Gco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-650" y="250"/>
+        </scene>
+    </scenes>
+</document>
